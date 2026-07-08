@@ -6,6 +6,7 @@ enum SardineError: LocalizedError, Equatable {
     case unsupportedVideo
     case cannotCreateReader
     case cannotCreateWriter
+    case compressionFailed
     case photoLibrarySaveFailed
     case insufficientStorage
 
@@ -21,6 +22,8 @@ enum SardineError: LocalizedError, Equatable {
             return "Could not create AVAssetReader for the selected video."
         case .cannotCreateWriter:
             return "Could not create AVAssetWriter for the output file."
+        case .compressionFailed:
+            return "Video compression failed."
         case .photoLibrarySaveFailed:
             return "Could not save the compressed video to Photos."
         case .insufficientStorage:
@@ -28,4 +31,3 @@ enum SardineError: LocalizedError, Equatable {
         }
     }
 }
-

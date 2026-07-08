@@ -1,29 +1,39 @@
+import CoreTransferable
+import PhotosUI
 import SwiftUI
+import UIKit
+import UniformTypeIdentifiers
 
 struct HomeView: View {
     @EnvironmentObject private var appState: AppState
+    @State private var selectedVideoItem: PhotosPickerItem?
 
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 24) {
                     hero
+                    metadataSection
                     presetSection
-                    nextStepSection
+                    progressSection
+                    resultSection
                 }
                 .padding(20)
             }
             .navigationTitle("沙丁鱼")
+            .onChange(of: selectedVideoItem) { item in
+                guard let item else { return }
+                Task {
+                    await importAndCompress(item)
+                }
+            }
         }
     }
 
     private var hero: some View {
         VStack(alignment: .leading, spacing: 14) {
             HStack(spacing: 16) {
-                Image("BrandAvatar")
-                    .resizable()
-                    .frame(width: 72, height: 72)
-                    .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+                BrandAvatarImage()
 
                 VStack(alignment: .leading, spacing: 4) {
                     Text("Sardine")
@@ -34,15 +44,48 @@ struct HomeView: View {
                 }
             }
 
-            Button {
-                // TODO: Open PhotosPicker / document picker.
-            } label: {
+            PhotosPicker(selection: $selectedVideoItem, matching: .videos) {
                 Label("选择视频", systemImage: "video.badge.plus")
                     .font(.headline)
                     .frame(maxWidth: .infinity)
             }
             .buttonStyle(.borderedProminent)
             .controlSize(.large)
+            .disabled(appState.isCompressing)
+        }
+    }
+
+    @ViewBuilder
+    private var metadataSection: some View {
+        if let metadata = appState.selectedMetadata {
+            VStack(alignment: .leading, spacing: 10) {
+                Text("源视频")
+                    .font(.title3.bold())
+
+                Grid(alignment: .leading, horizontalSpacing: 16, verticalSpacing: 8) {
+                    GridRow {
+                        Text("时长")
+                        Text(formatDuration(metadata.duration))
+                            .foregroundStyle(.secondary)
+                    }
+                    GridRow {
+                        Text("尺寸")
+                        Text("\(Int(metadata.displaySize.width)) x \(Int(metadata.displaySize.height))")
+                            .foregroundStyle(.secondary)
+                    }
+                    GridRow {
+                        Text("帧率")
+                        Text("\(Int(metadata.frameRate.rounded())) fps")
+                            .foregroundStyle(.secondary)
+                    }
+                    GridRow {
+                        Text("体积")
+                        Text(formatBytes(metadata.fileSize))
+                            .foregroundStyle(.secondary)
+                    }
+                }
+                .font(.subheadline)
+            }
         }
     }
 
@@ -62,17 +105,113 @@ struct HomeView: View {
         }
     }
 
-    private var nextStepSection: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text("开发下一步")
-                .font(.title3.bold())
-            Text("先实现固定路径：选择视频 → 读取元数据 → HEVC 1080p30 1.5Mbps → 导出 MP4。")
-                .font(.body)
-                .foregroundStyle(.secondary)
+    @ViewBuilder
+    private var progressSection: some View {
+        if appState.isCompressing {
+            VStack(alignment: .leading, spacing: 10) {
+                Text("正在压缩")
+                    .font(.title3.bold())
+                ProgressView(value: appState.progress)
+                Text("\(Int((appState.progress * 100).rounded()))%")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+        } else if let errorMessage = appState.errorMessage {
+            Text(errorMessage)
+                .font(.subheadline)
+                .foregroundStyle(.red)
         }
-        .padding()
-        .background(.thinMaterial)
-        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+    }
+
+    @ViewBuilder
+    private var resultSection: some View {
+        if let result = appState.recentResult {
+            VStack(alignment: .leading, spacing: 12) {
+                Text("压缩结果")
+                    .font(.title3.bold())
+
+                HStack {
+                    Text(formatBytes(result.originalSize))
+                    Image(systemName: "arrow.right")
+                    Text(formatBytes(result.compressedSize))
+                        .fontWeight(.semibold)
+                }
+                .font(.headline)
+
+                Text("压缩比例 \(Int((1 - result.compressionRatio) * 100))%")
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+
+                ShareLink(item: result.outputURL) {
+                    Label("保存到文件或分享", systemImage: "square.and.arrow.up")
+                        .frame(maxWidth: .infinity)
+                }
+                .buttonStyle(.borderedProminent)
+                .controlSize(.large)
+            }
+        }
+    }
+
+    private func importAndCompress(_ item: PhotosPickerItem) async {
+        do {
+            guard let pickedVideo = try await item.loadTransferable(type: PickedVideo.self) else {
+                appState.errorMessage = SardineError.unsupportedVideo.localizedDescription
+                return
+            }
+
+            await appState.compressVideo(at: pickedVideo.url)
+            selectedVideoItem = nil
+        } catch {
+            appState.errorMessage = error.localizedDescription
+        }
+    }
+
+    private func formatDuration(_ duration: TimeInterval) -> String {
+        let minutes = Int(duration) / 60
+        let seconds = Int(duration) % 60
+        return "\(minutes):\(String(format: "%02d", seconds))"
+    }
+
+    private func formatBytes(_ bytes: Int64) -> String {
+        ByteCountFormatter.string(fromByteCount: bytes, countStyle: .file)
     }
 }
 
+private struct BrandAvatarImage: View {
+    var body: some View {
+        if let image = UIImage(named: "BrandAvatar") ?? UIImage(named: "sardine-avatar-256") {
+            Image(uiImage: image)
+                .resizable()
+                .frame(width: 72, height: 72)
+                .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+        } else {
+            Image(systemName: "film.stack.fill")
+                .font(.system(size: 34, weight: .semibold))
+                .foregroundStyle(.white)
+                .frame(width: 72, height: 72)
+                .background(Color.accentColor)
+                .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+        }
+    }
+}
+
+private struct PickedVideo: Transferable {
+    let url: URL
+
+    static var transferRepresentation: some TransferRepresentation {
+        FileRepresentation(importedContentType: .movie) { receivedFile in
+            try TemporaryFileStore.prepareTemporaryDirectory()
+
+            let destinationURL = TemporaryFileStore.importedVideoURL(
+                filename: receivedFile.file.lastPathComponent
+            )
+
+            if FileManager.default.fileExists(atPath: destinationURL.path) {
+                try FileManager.default.removeItem(at: destinationURL)
+            }
+
+            try FileManager.default.copyItem(at: receivedFile.file, to: destinationURL)
+            return PickedVideo(url: destinationURL)
+        }
+    }
+}

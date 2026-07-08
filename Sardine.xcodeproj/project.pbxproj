@@ -1,0 +1,501 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		20A0910B5B640621C2FA8741 /* TemporaryFileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4030B369E7ED91DC21072AB /* TemporaryFileStore.swift */; };
+		305B894E5B32E2CF47BBB193 /* BitrateEstimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C013CB1ED237FD54A7335D /* BitrateEstimator.swift */; };
+		3BD8E81513ED002AA83F073B /* VideoMetadataReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F8A173D702FEC1D995401 /* VideoMetadataReader.swift */; };
+		4700A7AFB4D515B6F7340A98 /* VideoGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1A24BA1D7A65B4E7C9CC1A /* VideoGeometry.swift */; };
+		48153DF1F72AC25157535EFF /* CompressionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AE07104B736331400C142B /* CompressionEngine.swift */; };
+		50D195E726D702BE96AF68BB /* CompressionJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E58BF72DA8FB7D42F79490 /* CompressionJob.swift */; };
+		52D6223A50F90D7FF79B4739 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B57E94DE06EC1E812129BB /* AppState.swift */; };
+		855C5DEC2B49628138438DD2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3C19E71AA954AA4194C2B5 /* HomeView.swift */; };
+		9FAE029730EDF83978613AD2 /* CompressionPresetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE7F05B40906F6DEE98727 /* CompressionPresetTests.swift */; };
+		ABA35DAD09D85E626484C4CB /* PhotoLibrarySaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C94705B3EA7585CB813642 /* PhotoLibrarySaver.swift */; };
+		B6BB9EDE3CA5C62AFFB110C5 /* CompressionPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4802EC2822F29EBD2749938D /* CompressionPreset.swift */; };
+		BC4F6FEE30115F260EC821D4 /* SardineError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945953DBEF4BE1CC70C6B242 /* SardineError.swift */; };
+		CB58E3A5F25F7D0C5D4A784C /* VideoGeometryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1A88B9C86EB646EE6D52BC /* VideoGeometryTests.swift */; };
+		CD5BC29BF6E904AFFE215A05 /* BitrateEstimatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA03547E01C069717E28F778 /* BitrateEstimatorTests.swift */; };
+		E530648590379A767A08817E /* PresetCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2197414139D85E9554E535A4 /* PresetCard.swift */; };
+		EF5A4BF83D7A1DB94FCE6CE9 /* AppSettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEAAB6C10C35F3FBC0EEA01 /* AppSettingsStore.swift */; };
+		FBB5514149EB98595687562C /* SardineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1D19B07396132D0782FA6 /* SardineApp.swift */; };
+		FE314F58D49C557EA7CB1550 /* VideoMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C05424B8DC329BE01EFEB3 /* VideoMetadata.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FC4C0C65C0C3D849241D372B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7C6B64D5B216E7ABD00B4547 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 185D74524240B7A3BC13F735;
+			remoteInfo = Sardine;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01DEFA1B4B4C7A05D5D1B384 /* SardineTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SardineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		17C94705B3EA7585CB813642 /* PhotoLibrarySaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibrarySaver.swift; sourceTree = "<group>"; };
+		1F3C19E71AA954AA4194C2B5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		2197414139D85E9554E535A4 /* PresetCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetCard.swift; sourceTree = "<group>"; };
+		29C05424B8DC329BE01EFEB3 /* VideoMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMetadata.swift; sourceTree = "<group>"; };
+		36AE07104B736331400C142B /* CompressionEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompressionEngine.swift; sourceTree = "<group>"; };
+		3EE1D19B07396132D0782FA6 /* SardineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SardineApp.swift; sourceTree = "<group>"; };
+		4802EC2822F29EBD2749938D /* CompressionPreset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompressionPreset.swift; sourceTree = "<group>"; };
+		53E58BF72DA8FB7D42F79490 /* CompressionJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompressionJob.swift; sourceTree = "<group>"; };
+		7E2F8A173D702FEC1D995401 /* VideoMetadataReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMetadataReader.swift; sourceTree = "<group>"; };
+		824714300AF19C3F7D82BC9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		945953DBEF4BE1CC70C6B242 /* SardineError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SardineError.swift; sourceTree = "<group>"; };
+		99B57E94DE06EC1E812129BB /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		99C013CB1ED237FD54A7335D /* BitrateEstimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitrateEstimator.swift; sourceTree = "<group>"; };
+		AA03547E01C069717E28F778 /* BitrateEstimatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitrateEstimatorTests.swift; sourceTree = "<group>"; };
+		AC1A88B9C86EB646EE6D52BC /* VideoGeometryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGeometryTests.swift; sourceTree = "<group>"; };
+		AEEAAB6C10C35F3FBC0EEA01 /* AppSettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsStore.swift; sourceTree = "<group>"; };
+		B4030B369E7ED91DC21072AB /* TemporaryFileStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporaryFileStore.swift; sourceTree = "<group>"; };
+		B6294AF692959C91B9FFF56B /* Sardine.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Sardine.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFBE7F05B40906F6DEE98727 /* CompressionPresetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompressionPresetTests.swift; sourceTree = "<group>"; };
+		FA1A24BA1D7A65B4E7C9CC1A /* VideoGeometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGeometry.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		03F6F54F11046997CD70BF85 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				36AE07104B736331400C142B /* CompressionEngine.swift */,
+				17C94705B3EA7585CB813642 /* PhotoLibrarySaver.swift */,
+				945953DBEF4BE1CC70C6B242 /* SardineError.swift */,
+				FA1A24BA1D7A65B4E7C9CC1A /* VideoGeometry.swift */,
+				7E2F8A173D702FEC1D995401 /* VideoMetadataReader.swift */,
+			);
+			path = Media;
+			sourceTree = "<group>";
+		};
+		2A7FC83D706AD77138B53032 /* Sardine */ = {
+			isa = PBXGroup;
+			children = (
+				3EE1D19B07396132D0782FA6 /* SardineApp.swift */,
+				3DC6ECA96CF406ED72140EE6 /* App */,
+				2D35085CA077839477E901AC /* Domain */,
+				03F6F54F11046997CD70BF85 /* Media */,
+				AC81DA4BF7B403F878B59500 /* Storage */,
+				D0D267738E9A2C5FF536999F /* Supporting */,
+				D76FC5404400905078C0EEFC /* UI */,
+			);
+			path = Sardine;
+			sourceTree = "<group>";
+		};
+		2D35085CA077839477E901AC /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				99C013CB1ED237FD54A7335D /* BitrateEstimator.swift */,
+				53E58BF72DA8FB7D42F79490 /* CompressionJob.swift */,
+				4802EC2822F29EBD2749938D /* CompressionPreset.swift */,
+				29C05424B8DC329BE01EFEB3 /* VideoMetadata.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		3D749129D55996DCEC04AC35 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B6294AF692959C91B9FFF56B /* Sardine.app */,
+				01DEFA1B4B4C7A05D5D1B384 /* SardineTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3DC6ECA96CF406ED72140EE6 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				99B57E94DE06EC1E812129BB /* AppState.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		79C9DB96ECE151B0157007A3 /* SardineTests */ = {
+			isa = PBXGroup;
+			children = (
+				AA03547E01C069717E28F778 /* BitrateEstimatorTests.swift */,
+				CFBE7F05B40906F6DEE98727 /* CompressionPresetTests.swift */,
+				AC1A88B9C86EB646EE6D52BC /* VideoGeometryTests.swift */,
+			);
+			path = SardineTests;
+			sourceTree = "<group>";
+		};
+		94D85E3907CB4C1D8C9C7734 = {
+			isa = PBXGroup;
+			children = (
+				2A7FC83D706AD77138B53032 /* Sardine */,
+				79C9DB96ECE151B0157007A3 /* SardineTests */,
+				3D749129D55996DCEC04AC35 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AC81DA4BF7B403F878B59500 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				AEEAAB6C10C35F3FBC0EEA01 /* AppSettingsStore.swift */,
+				B4030B369E7ED91DC21072AB /* TemporaryFileStore.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		D0D267738E9A2C5FF536999F /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				824714300AF19C3F7D82BC9D /* Info.plist */,
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
+		D76FC5404400905078C0EEFC /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				1F3C19E71AA954AA4194C2B5 /* HomeView.swift */,
+				2197414139D85E9554E535A4 /* PresetCard.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		185D74524240B7A3BC13F735 /* Sardine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6FAB74DDE54FEFF584E3F002 /* Build configuration list for PBXNativeTarget "Sardine" */;
+			buildPhases = (
+				4720B53CB9FFFBD77D9FE8F2 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Sardine;
+			packageProductDependencies = (
+			);
+			productName = Sardine;
+			productReference = B6294AF692959C91B9FFF56B /* Sardine.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FF9F2146525CEC8E88CD4A34 /* SardineTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1371639394F62BD3B6A85E0 /* Build configuration list for PBXNativeTarget "SardineTests" */;
+			buildPhases = (
+				E31C6F52866CFC4BABC72876 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EE6BBA5AA42D4829B2A6CBF3 /* PBXTargetDependency */,
+			);
+			name = SardineTests;
+			packageProductDependencies = (
+			);
+			productName = SardineTests;
+			productReference = 01DEFA1B4B4C7A05D5D1B384 /* SardineTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7C6B64D5B216E7ABD00B4547 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = 0034560C38A57F17A7363617 /* Build configuration list for PBXProject "Sardine" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 94D85E3907CB4C1D8C9C7734;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 3D749129D55996DCEC04AC35 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				185D74524240B7A3BC13F735 /* Sardine */,
+				FF9F2146525CEC8E88CD4A34 /* SardineTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4720B53CB9FFFBD77D9FE8F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF5A4BF83D7A1DB94FCE6CE9 /* AppSettingsStore.swift in Sources */,
+				52D6223A50F90D7FF79B4739 /* AppState.swift in Sources */,
+				305B894E5B32E2CF47BBB193 /* BitrateEstimator.swift in Sources */,
+				48153DF1F72AC25157535EFF /* CompressionEngine.swift in Sources */,
+				50D195E726D702BE96AF68BB /* CompressionJob.swift in Sources */,
+				B6BB9EDE3CA5C62AFFB110C5 /* CompressionPreset.swift in Sources */,
+				855C5DEC2B49628138438DD2 /* HomeView.swift in Sources */,
+				ABA35DAD09D85E626484C4CB /* PhotoLibrarySaver.swift in Sources */,
+				E530648590379A767A08817E /* PresetCard.swift in Sources */,
+				FBB5514149EB98595687562C /* SardineApp.swift in Sources */,
+				BC4F6FEE30115F260EC821D4 /* SardineError.swift in Sources */,
+				20A0910B5B640621C2FA8741 /* TemporaryFileStore.swift in Sources */,
+				4700A7AFB4D515B6F7340A98 /* VideoGeometry.swift in Sources */,
+				FE314F58D49C557EA7CB1550 /* VideoMetadata.swift in Sources */,
+				3BD8E81513ED002AA83F073B /* VideoMetadataReader.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E31C6F52866CFC4BABC72876 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD5BC29BF6E904AFFE215A05 /* BitrateEstimatorTests.swift in Sources */,
+				9FAE029730EDF83978613AD2 /* CompressionPresetTests.swift in Sources */,
+				CB58E3A5F25F7D0C5D4A784C /* VideoGeometryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EE6BBA5AA42D4829B2A6CBF3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 185D74524240B7A3BC13F735 /* Sardine */;
+			targetProxy = FC4C0C65C0C3D849241D372B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		23CA44D51EE10768B33BFEF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Sardine/Supporting/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.futeng.sardine;
+				PRODUCT_NAME = Sardine;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		292405EF397BB3DCA95993BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.futeng.sardine.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sardine.app/Sardine";
+			};
+			name = Debug;
+		};
+		7665307179B6AA20D4206BBD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.10;
+			};
+			name = Debug;
+		};
+		86420D31D0F092FE81A9D52E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.futeng.sardine.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sardine.app/Sardine";
+			};
+			name = Release;
+		};
+		88B42F9FD24BB0BB46E96662 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.10;
+			};
+			name = Release;
+		};
+		97499EA95AAE3ED95B646E13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Sardine/Supporting/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.futeng.sardine;
+				PRODUCT_NAME = Sardine;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0034560C38A57F17A7363617 /* Build configuration list for PBXProject "Sardine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7665307179B6AA20D4206BBD /* Debug */,
+				88B42F9FD24BB0BB46E96662 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6FAB74DDE54FEFF584E3F002 /* Build configuration list for PBXNativeTarget "Sardine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97499EA95AAE3ED95B646E13 /* Debug */,
+				23CA44D51EE10768B33BFEF5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E1371639394F62BD3B6A85E0 /* Build configuration list for PBXNativeTarget "SardineTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				292405EF397BB3DCA95993BB /* Debug */,
+				86420D31D0F092FE81A9D52E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7C6B64D5B216E7ABD00B4547 /* Project object */;
+}
