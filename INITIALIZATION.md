@@ -6,11 +6,11 @@ This repository was initialized with:
 - MIT license;
 - Swift / Xcode `.gitignore`;
 - XcodeGen project specification;
-- SwiftUI app shell;
+- SwiftUI app shell and working home flow;
 - compression-domain models;
-- media-layer skeleton;
-- storage-layer skeleton;
-- unit-test skeleton;
+- AVFoundation media layer;
+- storage helpers;
+- unit tests;
 - AppIcon asset catalog;
 - generated Sardine avatar;
 - technical design docs;
@@ -18,10 +18,7 @@ This repository was initialized with:
 
 ## What remains
 
-- Generate Xcode project with `xcodegen generate`.
-- Compile and fix any local Xcode-version issues.
-- Implement AVFoundation compression pipeline.
-- Add video picker.
-- Add output save/export.
-- Add Share Extension and App Intents after the main app works.
-
+- Keep real-device regression notes for homework videos.
+- Add Share Extension after the main app flow stays stable.
+- Add App Intents / Shortcuts after Share Extension.
+- Add custom bitrate controls only if the presets are not enough.

@@ -7,6 +7,10 @@ import UniformTypeIdentifiers
 struct HomeView: View {
     @EnvironmentObject private var appState: AppState
     @State private var selectedVideoItem: PhotosPickerItem?
+    @State private var noticeMessage: String?
+    @State private var isSavingToPhotos = false
+
+    private let photoLibrarySaver = PhotoLibrarySaver()
 
     var body: some View {
         NavigationStack {
@@ -27,7 +31,25 @@ struct HomeView: View {
                     await importAndCompress(item)
                 }
             }
+            .alert("沙丁鱼", isPresented: noticeBinding) {
+                Button("知道了", role: .cancel) {
+                    noticeMessage = nil
+                }
+            } message: {
+                Text(noticeMessage ?? "")
+            }
         }
+    }
+
+    private var noticeBinding: Binding<Bool> {
+        Binding(
+            get: { noticeMessage != nil },
+            set: { isPresented in
+                if !isPresented {
+                    noticeMessage = nil
+                }
+            }
+        )
     }
 
     private var hero: some View {
@@ -142,13 +164,47 @@ struct HomeView: View {
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
 
-                ShareLink(item: result.outputURL) {
-                    Label("保存到文件或分享", systemImage: "square.and.arrow.up")
-                        .frame(maxWidth: .infinity)
+                Button {
+                    Task {
+                        await saveToPhotos(result.outputURL)
+                    }
+                } label: {
+                    if isSavingToPhotos {
+                        Label("正在保存到相册", systemImage: "photo.badge.arrow.down")
+                            .frame(maxWidth: .infinity)
+                    } else {
+                        Label("保存到相册", systemImage: "photo.badge.arrow.down")
+                            .frame(maxWidth: .infinity)
+                    }
                 }
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
+                .disabled(isSavingToPhotos)
+
+                ShareLink(item: result.outputURL) {
+                    Label("保存到文件或转发", systemImage: "square.and.arrow.up")
+                        .frame(maxWidth: .infinity)
+                }
+                .simultaneousGesture(TapGesture().onEnded {
+                    noticeMessage = "系统分享面板已打开。保存到文件或转发完成后，回到沙丁鱼即可继续。"
+                })
+                .buttonStyle(.bordered)
+                .controlSize(.large)
             }
+        }
+    }
+
+    private func saveToPhotos(_ url: URL) async {
+        isSavingToPhotos = true
+        defer {
+            isSavingToPhotos = false
+        }
+
+        do {
+            try await photoLibrarySaver.saveVideo(at: url)
+            noticeMessage = "已保存到相册。你可以在“照片”里查看压缩后的视频。"
+        } catch {
+            noticeMessage = "保存失败：\(error.localizedDescription)"
         }
     }
 

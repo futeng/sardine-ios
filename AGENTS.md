@@ -16,17 +16,23 @@ Sardine is a local-only iOS video compression app for homework-style videos. Its
 - Prefer original audio passthrough; fallback to AAC only when needed.
 - Keep UI simple enough for parents and children.
 
-## Recommended implementation order
+## Current implementation state
 
-1. Generate the Xcode project from `project.yml`.
-2. Make the SwiftUI shell compile.
-3. Implement `VideoMetadataReader`.
-4. Implement the fixed `homeworkClear` compression path.
-5. Add save-to-Files.
-6. Add save-to-Photos.
-7. Add preset selection and custom bitrate.
-8. Add Share Extension.
-9. Add App Intents / Shortcuts integration.
+The main app flow is implemented:
+
+1. Open the checked-in `Sardine.xcodeproj`.
+2. Pick a video from Photos.
+3. Read video metadata.
+4. Compress locally through the AVFoundation pipeline.
+5. Save the result to Photos.
+6. Share or save the compressed MP4 through the system share sheet.
+
+Recommended next work:
+
+1. Add more real-video regression samples and record before/after readability.
+2. Add custom bitrate controls only if the three presets are not enough.
+3. Add Share Extension.
+4. Add App Intents / Shortcuts integration.
 
 ## Quality bar
 
@@ -55,4 +61,3 @@ Record before/after size, output bitrate, time, and readability.
 - Keep UI views thin.
 - Do not put compression logic directly in SwiftUI views.
 - Add unit tests for bitrate estimation, geometry calculations, and preset behavior before expanding UI.
-

@@ -1,6 +1,6 @@
 # Agent Handoff
 
-This repo is ready for a follow-up AI agent to implement the iOS app.
+This repo is ready for a follow-up AI agent to continue the iOS app.
 
 ## Current state
 
@@ -8,38 +8,42 @@ Done:
 
 - Product naming finalized as `Sardine`.
 - Chinese app name: `沙丁鱼`.
-- Repo scaffold created.
 - Brand avatar generated.
 - App icon assets generated.
 - Technical design written.
-- XcodeGen project spec added.
-- SwiftUI source skeleton added.
+- Checked-in Xcode project added.
+- XcodeGen project spec retained for regeneration.
+- SwiftUI home flow implemented.
+- Photos video picker implemented.
+- Video metadata reader implemented.
+- AVFoundation compression pipeline implemented.
+- Preset selection implemented.
+- Save-to-Photos implemented.
+- System share sheet export implemented.
 
 Not done:
 
-- Xcode project generation has not been run in this repo yet.
-- AVFoundation compression pipeline is not implemented.
-- Photo library save/export is only planned.
 - Share Extension and App Intents are not implemented.
+- Custom bitrate UI is not implemented.
+- Broader real-video regression coverage is still needed.
 
 ## First commands on the development machine
 
 ```bash
 cd /path/to/sardine-ios
-brew install xcodegen
-xcodegen generate
 open Sardine.xcodeproj
 ```
 
-## First implementation target
+Use XcodeGen only when the project needs to be regenerated:
 
-Implement one path only:
-
-```text
-Input video -> metadata read -> HEVC 1080p30 1.5Mbps -> MP4 temp file -> save to Files
+```bash
+brew install xcodegen
+xcodegen generate
 ```
 
-Do not start with Share Extension or Shortcuts.
+## Next implementation target
+
+Keep the existing local compression path stable, then add one integration surface at a time. Prefer Share Extension before Shortcuts, because it fits the user behavior of starting from a video in Photos.
 
 ## Highest-risk files
 
@@ -59,20 +63,13 @@ If a future agent wants to reduce default bitrate, require side-by-side screensh
 
 M1:
 
-- project builds;
-- home screen appears;
-- preset list renders;
-- metadata reader can inspect a selected local video file;
-- no compression yet.
+- add a small manual regression set of real homework videos;
+- record before size, after size, compression time, selected preset, and readability notes.
 
 M2:
 
-- one hard-coded compression path works on a real iPhone;
-- result can be exported to Files.
+- add Share Extension from Photos / Files into the existing compression flow.
 
 M3:
 
-- save to Photos;
-- progress UI;
-- error handling.
-
+- add App Intents / Shortcuts only after the Share Extension behavior is stable.

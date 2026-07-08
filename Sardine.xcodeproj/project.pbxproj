@@ -16,6 +16,7 @@
 		52D6223A50F90D7FF79B4739 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B57E94DE06EC1E812129BB /* AppState.swift */; };
 		855C5DEC2B49628138438DD2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3C19E71AA954AA4194C2B5 /* HomeView.swift */; };
 		9FAE029730EDF83978613AD2 /* CompressionPresetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE7F05B40906F6DEE98727 /* CompressionPresetTests.swift */; };
+		A1B2C3D4E5F60718293A4B5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2B3C4D5E6F708192A3B4C5D /* Assets.xcassets */; };
 		ABA35DAD09D85E626484C4CB /* PhotoLibrarySaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C94705B3EA7585CB813642 /* PhotoLibrarySaver.swift */; };
 		B6BB9EDE3CA5C62AFFB110C5 /* CompressionPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4802EC2822F29EBD2749938D /* CompressionPreset.swift */; };
 		BC4F6FEE30115F260EC821D4 /* SardineError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945953DBEF4BE1CC70C6B242 /* SardineError.swift */; };
@@ -52,6 +53,7 @@
 		945953DBEF4BE1CC70C6B242 /* SardineError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SardineError.swift; sourceTree = "<group>"; };
 		99B57E94DE06EC1E812129BB /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		99C013CB1ED237FD54A7335D /* BitrateEstimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitrateEstimator.swift; sourceTree = "<group>"; };
+		A2B3C4D5E6F708192A3B4C5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA03547E01C069717E28F778 /* BitrateEstimatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitrateEstimatorTests.swift; sourceTree = "<group>"; };
 		AC1A88B9C86EB646EE6D52BC /* VideoGeometryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGeometryTests.swift; sourceTree = "<group>"; };
 		AEEAAB6C10C35F3FBC0EEA01 /* AppSettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsStore.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				3EE1D19B07396132D0782FA6 /* SardineApp.swift */,
+				A2B3C4D5E6F708192A3B4C5D /* Assets.xcassets */,
 				3DC6ECA96CF406ED72140EE6 /* App */,
 				2D35085CA077839477E901AC /* Domain */,
 				03F6F54F11046997CD70BF85 /* Media */,
@@ -169,6 +172,7 @@
 			buildConfigurationList = 6FAB74DDE54FEFF584E3F002 /* Build configuration list for PBXNativeTarget "Sardine" */;
 			buildPhases = (
 				4720B53CB9FFFBD77D9FE8F2 /* Sources */,
+				A3B4C5D6E7F8091A2B3C4D5E /* Resources */,
 			);
 			buildRules = (
 			);
@@ -229,6 +233,17 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A3B4C5D6E7F8091A2B3C4D5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B2C3D4E5F60718293A4B5C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4720B53CB9FFFBD77D9FE8F2 /* Sources */ = {

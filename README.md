@@ -2,6 +2,8 @@
 
 ![Sardine avatar](assets/brand/exports/sardine-avatar-256.png)
 
+![Sardine iPhone home screen](assets/screenshots/sardine-home-promo.png)
+
 Sardine is a small iOS video compression app for homework-style videos: worksheets, textbooks, notebooks, whiteboards, and short narrated assignments.
 
 The product goal is deliberately narrow:
@@ -18,24 +20,23 @@ This also keeps the naming style aligned with `Marlin`, the earlier ocean-themed
 
 ## Current status
 
-This repository is initialized as a technical handoff package and iOS app scaffold. It contains:
+Sardine now has a working local iOS app flow:
 
-- product and technical design documents;
-- compression preset strategy;
-- brand assets and generated app icons;
-- SwiftUI source skeleton;
-- XcodeGen project specification;
-- future-agent implementation instructions.
+- pick a video from Photos;
+- read duration, dimensions, frame rate, and file size;
+- choose a compression preset;
+- compress locally with AVFoundation;
+- keep 1080p-class readability by default;
+- save the result back to Photos;
+- share or save the compressed MP4 through the system share sheet.
 
-The actual AVFoundation compression pipeline still needs implementation.
+The app icon and brand avatar are bundled through `Assets.xcassets`. There is no server component.
 
-## Recommended first build path
+## Build
 
-Use XcodeGen to generate the Xcode project:
+Open the checked-in Xcode project:
 
 ```bash
-brew install xcodegen
-xcodegen generate
 open Sardine.xcodeproj
 ```
 
@@ -43,9 +44,16 @@ Then run the `Sardine` scheme on an iPhone simulator or physical iPhone.
 
 Physical device testing is required for real video compression performance and photo library save behavior.
 
+The repository still keeps `project.yml` so future agents can regenerate the project with XcodeGen when needed:
+
+```bash
+brew install xcodegen
+xcodegen generate
+```
+
 ## Product defaults
 
-The first production-quality preset should be:
+The default preset is:
 
 | Setting | Value |
 |---|---|
@@ -53,10 +61,10 @@ The first production-quality preset should be:
 | Container | MP4 |
 | Resolution | Long side <= 1920 px |
 | Frame rate | <= 30 fps |
-| Video bitrate | 1.5 Mbps |
-| Audio | Prefer passthrough; fallback to AAC 96 kbps |
+| Video bitrate | 1.5 Mbps for clear compression |
+| Audio | Prefer passthrough; fallback to AAC 96 kbps when needed |
 
-For text-heavy videos, use 2.0 Mbps.
+For text-heavy worksheets, textbooks, and handwriting, use the text-first preset at 2.0 Mbps.
 
 Do not default to 720p. Text on worksheets and textbooks degrades too quickly at 720p.
 
@@ -75,7 +83,7 @@ Do not default to 720p. Text on worksheets and textbooks degrades too quickly at
 ```text
 sardine-ios
 ├── Sardine/                 # SwiftUI app source
-├── SardineTests/            # Unit-test skeleton
+├── SardineTests/            # Unit tests
 ├── assets/brand/            # Brand source and exported images
 ├── docs/                    # Product, technical, testing, and handoff docs
 ├── project.yml              # XcodeGen spec
@@ -89,6 +97,8 @@ sardine-ios
 ## Privacy posture
 
 Sardine should process videos locally on device. No analytics, server upload, account system, or cloud dependency should be added without explicit product review.
+
+Current app permissions are limited to selecting videos from Photos and saving compressed videos back to Photos.
 
 ## License
 

@@ -14,10 +14,8 @@ targets:
     platform: iOS
     sources:
       - path: Sardine
-        excludes:
-          - Assets.xcassets
     resources:
-      - assets/brand/exports/sardine-avatar-256.png
+      - Sardine/Assets.xcassets
     settings:
       PRODUCT_BUNDLE_IDENTIFIER: com.futeng.sardine
       PRODUCT_NAME: Sardine
