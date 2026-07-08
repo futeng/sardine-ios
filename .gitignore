@@ -1,0 +1,52 @@
+# Xcode
+DerivedData/
+build/
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+*.xcodeproj/project.xcworkspace/xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+
+# Swift Package Manager
+.build/
+Packages/
+Package.resolved
+
+# CocoaPods / Carthage / fastlane
+Pods/
+Carthage/Build/
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output/
+
+# App archives and symbols
+*.ipa
+*.dSYM.zip
+*.dSYM
+*.xcarchive
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Local config
+.env
+.env.*
+*.local
+
+# Generated temp media
+tmp/
+temp/
+*.mov
+*.MOV
+*.mp4
+*.m4v
+*.heic
+*.heif
+
+# Keep intentional test fixtures under docs or fixtures if needed.
+!docs/**/*.mp4
+!fixtures/**/*.mp4
+
